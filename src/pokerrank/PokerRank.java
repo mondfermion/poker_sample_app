@@ -38,7 +38,16 @@ public class PokerRank {
           System.out.println("The cards of player one are: " +  Arrays.toString(PlayerOne));
           System.out.println("The cards of player two are: " + Arrays.toString(PlayerTwo));
           rankagent.card_sequencer(PlayerOne);
-          rankagent.printer();
+          
+          if (rankagent.lenght_of_not_empty_values.size() < 5){
+             rankagent.same_values();
+          }
+          
+          else{
+             rankagent.no_same_values();
+          }
+          
+          System.out.println(rankagent.rank);
          }   
          
          while (pair != null);
