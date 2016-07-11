@@ -476,9 +476,7 @@ public class RankAgent {
         if (this.rank == 8 | this.rank == 2 | this.rank == 7 | this.rank == 4 | this.rank == 3 ){
             winner_selected = this.winner_bigger_value(highst_values[0], highst_values[1]);
             if(winner_selected == 0){
-                System.out.println("Hallo");
-              System.out.println(last_card[0][0]);
-              System.out.println(last_card[1][0]);
+               
             if(this.rank == 3 & last_card[0][0] > last_card[1][0]){
                 this.winner = 1;    
                 }
