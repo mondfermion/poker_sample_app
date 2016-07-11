@@ -31,23 +31,36 @@ public class PokerRank {
          
          
          do {   
+          try{   
           pair = inputreader.readLine();
           String[] players =   pair.split(":");
           String[] PlayerOne = players[0].split(" ");
           String[] PlayerTwo = players[1].split(" ");
+          
+         
           System.out.println("The cards of player one are: " +  Arrays.toString(PlayerOne));
           System.out.println("The cards of player two are: " + Arrays.toString(PlayerTwo));
-          rankagent.card_sequencer(PlayerOne);
           
-          if (rankagent.lenght_of_not_empty_values.size() < 5){
-             rankagent.same_values();
+         int[] parameters = rankagent.start_rankagent(PlayerOne, PlayerTwo);
+         
+         System.out.println("Ranks and winner: " + Arrays.toString(parameters));
+         
+         if(parameters[2] == 1){
+           System.out.println("Player one wins");
+         }
+         else if(parameters[2] == 2){
+           System.out.println("Player two wins");
+         }
+         
+         else{
+           System.out.println("tie");
+         }
+             
           }
           
-          else{
-             rankagent.no_same_values();
-          }
-          
-          System.out.println(rankagent.rank);
+         catch(NullPointerException e) {
+             System.out.println("End of file");
+         }
          }   
          
          while (pair != null);
